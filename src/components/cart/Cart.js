@@ -15,6 +15,7 @@ export default function Cart() {
     );
   }, [cartItems]);
 
+  
   const updateCart = (id, qty) => {
     setCartItems((prev) => ({ ...prev, [id]: qty }));
   };
