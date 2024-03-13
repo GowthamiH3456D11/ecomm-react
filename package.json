@@ -1,6 +1,6 @@
 {
   "homepage": "https://nairsite.github.io/ecomm-react/",
-  "name": "ecomm-react",
+  "name":"ecomm-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

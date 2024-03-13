@@ -7,16 +7,20 @@ import Navbar from "./components/navbar/Navbar.js";
 import Login from "./components/user/Login.js";
 import { AppContextProvider } from "./context/appContext.js";
 import Logout from "./components/user/Logout.js";
-import Footer from "./components/footer/Footer.js"
+import Footer from "./components/footer/Footer.js";
+import Orders from "./components/order/Orders.js";
 
 export const UserContext = createContext(null);
 function App() {
-  const [user, setuser] = useState(0);
-  const val = { user, setuser };
+  const PATH = process.env.REACT_APP_PATH;
+  const [flag, setFlag] = useState(0);
+  const [user, setUser] = useState({ name: "", email: "", pass: "" });
+  const [users, setUsers] = useState([]);
+  const val = { flag, setFlag, user, setUser, users, setUsers };
   return (
     <div className="App">
       <UserContext.Provider value={val}>
-        {!user ? (
+        {flag === 0 || flag === 1 ? (
           <Login />
         ) : (
           <AppContextProvider>
@@ -24,10 +28,11 @@ function App() {
               <Navbar />
               <hr></hr>
               <Routes>
-                <Route path="/" index element={<Products />} />
-                <Route path="/cart" element={<Cart />} />
+                <Route path={`${PATH}/`} index element={<Products />} />
+                <Route path={`${PATH}/order`} element={<Orders />} />
+                <Route path={`${PATH}/cart`} element={<Cart />} />
               </Routes>
-              <Footer/>
+              <Footer />
             </Router>
           </AppContextProvider>
         )}

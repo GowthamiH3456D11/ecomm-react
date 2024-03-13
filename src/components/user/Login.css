@@ -1,87 +1,96 @@
-*{
-margin:auto;
-} 
+* {
+    margin: auto;
+}
+
 .container {
-    display:flex;
-    column-gap: 40px;
-    padding:150px;
-    margin:auto;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* column-gap: 40px; */
+    /* padding:150px; */
+    margin: auto;
     background-image: url('../../bg1.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-    align-items:  baseline;
-    
+    background-size: cover;
+    /* align-items:  center; */
+    /* justify-content: center; */
+
 }
-.leftBox{
-    width:400px;
+
+.leftBox {
+    width: 380px;
     /* background-color: whitesmoke; */
-    padding:40px;
+    padding: 40px;
     font-size: large;
     text-align: left;
     /* border: 1px solid silver; */
-    color:black;
+    color: black;
     height: 400px;
-    margin-left: 0;
-    
+    /* margin-left: 0; */
 
-    
+
+
 }
-.rightBox{
-    width:400px;
-    padding:40px;
-    /* height: 400px; */
+
+.rightBox {
+    width: 400px;
+    padding: 40px;
+    height: 380px;
     /* background-color: whitesmoke; */
     background-color: bisque;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     border: 1px solid silver;
     box-shadow: 1px 1px 1px silver;
     border-radius: 10px;
-   
+
 }
 
-input,button{
-    width:100%;
+input,button {
+    width: 100%;
     box-sizing: border-box;
     background-color: white;
-    border:none;
-    font-size:20px;
+    border: none;
+    font-size: 20px;
     line-height: 50px;
-    outline: none;
-    
+    outline-color: silver;
+    /* outline: none; */
+
 }
 
-.newAccBtn{
-    width:60%;
+.newAccBtn {
+    width: 60%;
     background-color: green;
     border-radius: 10px;
 }
 
-button{
+button {
     background-color: #3b120f;
-    color:white;
-    font-weight:bold;
+    color: white;
+    font-weight: bold;
     margin-top: 30px;
     border-radius: 10px;
 }
 
 
 .txtBox:focus-within {
-    border:2px solid silver;
-}
-.pwdEye{
-display:flex;
-justify-content: space-between;
-background-color: white;
-align-items: center;
-margin-top: 30px;
+    border: 2px solid silver;
 }
 
-.pwdEye:focus-within{
-    border:2px solid silver;
+.pwdEye {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.pwdEye:focus-within {
+    border: 2px solid silver;
 
 }
 
-input[type=password]:focus{
+input[type=password]:focus {
     outline: none;
 }
 
@@ -91,6 +100,13 @@ input[type=password]:focus{
 }
 
 .tagLine {
-    margin-left:25px;
+    margin-left: 25px;
     font-size: 20px;
+}
+
+.Login-msg{
+    font-size: 20px;
+    font-weight: bold;
+    color:red;
+    padding:5px
 }
