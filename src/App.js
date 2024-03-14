@@ -10,6 +10,7 @@ import Logout from "./components/user/Logout.js";
 import Footer from "./components/footer/Footer.js";
 import Orders from "./components/order/Orders.js";
 
+
 export const UserContext = createContext(null);
 function App() {
   const PATH = process.env.REACT_APP_PATH;
@@ -32,6 +33,7 @@ function App() {
                 <Route path={`${PATH}/`} index element={<Products />} />
                 <Route path={`${PATH}/order`}  element={<Orders />} />
                 <Route path={`${PATH}/cart`}  element={<Cart />} />
+                <Route path={`${PATH}/login`}  element={<Login />} />
                 
               </Routes>
               <Footer />

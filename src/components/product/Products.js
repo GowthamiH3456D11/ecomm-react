@@ -4,7 +4,7 @@ import products from "./products.json"
 import "./Product.css"
 import AddButton from "./AddButton.js";
 export default function Products() {
-  console.log("In Product");
+  
   const {cartItems, setCartItems } = useContext(AppContext);
   const PATH = process.env.REACT_APP_PATH
   // const addtoCart = (id) => {

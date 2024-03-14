@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useMemo } from "react";
 import cartEmpty from "../../img/cart-empty.jpg";
 import { AppContext } from "../../context/appContext.js";
 import { UserContext } from "../../App.js";
@@ -24,9 +24,16 @@ export default function Cart() {
     );
   }, [cartItems]);
 
-  
   const updateCart = (id, qty) => {
-    setCartItems((prev) => ({ ...prev, [id]: qty }));
+    setCartItems((prev) => {
+      if(prev[id] == 1 && qty == 0)  {
+        delete prev[id];
+        return {...prev};
+      }
+      else{
+        return {...prev, [id]: qty};
+      }
+    })
   };
 
   const submitOrder = () => {
@@ -38,7 +45,7 @@ export default function Cart() {
     setOrder((prev) => ({ ...prev, order }));
     setOrders((prev) => [...prev, order]);
     setCartItems(() => []);
-    navigate("/ecomm-react/order");
+    navigate("/ecomm-react/Login");
   };
 
   return (
@@ -48,7 +55,7 @@ export default function Cart() {
           <div className="Cart-div-left">
             <table className="Cart-table">
               <tr>
-                <th>Item</th>
+                <th>{Object.keys(cartItems).length > 1 ? "Items": "Item" }</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total</th>
@@ -94,7 +101,7 @@ export default function Cart() {
             <div className="Cart-order-value">Order Value: ₹{orderValue}</div>
             <div className="Cart-order-value">
               <button onClick={submitOrder} className="Cart-place-order">
-                Submit Order
+                Proceed to buy
               </button>
             </div>
           </div>

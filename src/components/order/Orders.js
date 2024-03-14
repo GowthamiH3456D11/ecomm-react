@@ -12,7 +12,7 @@ export default function Orders() {
         {myOrders.length > 0 && (
           <tr>
             <th>Order Date</th>
-            <th>Items</th>
+            <th> Items</th>
             <th>Total</th>
             <th>Status</th>
           </tr>
