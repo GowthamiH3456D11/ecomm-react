@@ -3,9 +3,10 @@ import "./Register.css";
 import { useContext, useState } from "react";
 import { UserContext } from "../../App";
 export default function Register() {
-  const { flag, setFlag, user, setUser, users, setUsers } =
+  const { flag, setFlag, user, setUser, users, setUsers , } =
     useContext(UserContext);
-  // const [user, setUser] = useState({ name: "", email: "", pass: "" });
+    
+  // const [user,setuser] = useState({ name: "gowthami", email:"gow@gmail.com", pass: "123" });
   const newUser = () => {
     setUsers((prev) => [...prev, user]);
     setFlag(() => 2);
@@ -16,7 +17,7 @@ export default function Register() {
       <div className="modal-content">
         <div className="Rigister-header">
           <div className="Register-signup-title">Sign Up</div>
-          <div onClick={() => setFlag(() => 0)} className="close">
+          <div onClick={() => setFlag(() => 2)} className="close">
             &times;
           </div>
         </div>
@@ -49,6 +50,7 @@ export default function Register() {
 
         <div>
           <button onClick={newUser}> Sign Up</button>
+
         </div>
       </div>
     </div>
